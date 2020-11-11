@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContactService } from '../contact.service';
 import { Contact } from '../interfaces/contact';
 
 @Component({
@@ -7,52 +8,24 @@ import { Contact } from '../interfaces/contact';
   styleUrls: ['./contacts-page.component.css'],
 })
 export class ContactsPageComponent implements OnInit {
-  contacts: Contact[] = [
-    {
-      name: 'Billy',
-      company: 'Ford',
-      emergency: false,
-      number: '248-248-2480',
-      birthday: '01-24-1994',
-    },
-    {
-      name: 'Hulk Hogan',
-      company: 'Ford',
-      emergency: false,
-      number: '248-248-2480',
-      birthday: '01-24-1994',
-    },
-    {
-      name: 'Simba',
-      company: 'Ford',
-      emergency: false,
-      number: '248-248-2480',
-      birthday: '01-24-1994',
-    },
-    {
-      name: 'Muffasa',
-      company: 'Ford',
-      emergency: false,
-      number: '248-248-2480',
-      birthday: '01-24-1994',
-    },
-    {
-      name: 'Nemo',
-      company: 'Ford',
-      emergency: false,
-      number: '248-248-2480',
-      birthday: '01-24-1994',
-    },
-  ];
+  contacts: Contact[] = [];
+  constructor(private contactService: ContactService) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    this.contacts = this.getContacts();
+  }
 
-  ngOnInit(): void {}
+  getContacts = () => {
+    return this.contactService.getContacts();
+  };
+
   deleteContact = (index: number): void => {
-    this.contacts.splice(index, 1);
+    this.contactService.deleteContact(index);
+    this.contacts = this.getContacts();
   };
 
   addContact = (contact: Contact): void => {
-    this.contacts.push(contact);
+    this.contactService.addContact(contact);
+    this.contacts = this.getContacts();
   };
 }

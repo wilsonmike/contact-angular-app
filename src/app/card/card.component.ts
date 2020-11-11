@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ContactService } from '../contact.service';
 import { Contact } from '../interfaces/contact';
 
 @Component({
@@ -9,11 +10,15 @@ import { Contact } from '../interfaces/contact';
 export class CardComponent implements OnInit {
   @Input() contactRef: Contact;
   @Output() deleteEvent = new EventEmitter<void>();
-  constructor() {}
+  constructor(private contactService: ContactService) {}
 
   ngOnInit(): void {}
 
   emitDeleteEvent = (): void => {
     this.deleteEvent.emit();
+  };
+
+  addFavorite = (contact: Contact) => {
+    this.contactService.addFavorite(contact);
   };
 }

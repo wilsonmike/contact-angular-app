@@ -3,7 +3,42 @@
   flex-direction: column;
   width: 50%;
   margin: 0 auto;
+  padding: 20px;
+  background: #a770ef; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to left,
+    #fdb99b,
+    #cf8bf3,
+    #a770ef
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to left,
+    #fdb99b,
+    #cf8bf3,
+    #a770ef
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  margin-top: 10px;
+  color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 .radio-container {
   display: flex;
+}
+.form-input {
+  border: none;
+  border-bottom: 1px solid white;
+  background: transparent;
+}
+.submit-btn {
+  margin-top: 5px;
+  border: none;
+  border-radius: 5px;
+  height: 20px;
+}
+#birthday {
+  color: white;
+}
+::-webkit-calendar-picker-indicator {
+  filter: invert(1);
 }

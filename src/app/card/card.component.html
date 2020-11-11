@@ -4,5 +4,11 @@
   <p>Emergency: {{ contactRef.emergency }}</p>
   <p>Number: {{ contactRef.number }}</p>
   <p>Birthday: {{ contactRef.birthday | date: "shortDate" }}</p>
-  <button class="remove-btn" (click)="emitDeleteEvent()">X</button>
+  <img
+    (click)="emitDeleteEvent()"
+    class="remove-btn"
+    src="assets/delete (1).svg"
+    alt=""
+  />
+  <button (click)="addFavorite(contactRef)" class="fas fa-heart"></button>
 </li>

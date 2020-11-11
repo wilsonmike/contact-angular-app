@@ -7,9 +7,35 @@
   margin: 10px;
   position: relative;
   border-radius: 10px;
+  background-color: white;
+  color: black;
 }
 .remove-btn {
   position: absolute;
   right: -10px;
   bottom: -10px;
+  height: 25px;
+  width: 25px;
+}
+.fa-heart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  color: rgb(248, 136, 237);
+  padding: 5px;
+  outline: 0;
+}
+.fa-heart:focus {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  border: none;
+  background-color: transparent;
+  color: rgb(255, 225, 0);
+  padding: 5px;
+  outline: 0;
 }
